@@ -2,12 +2,8 @@
 	export let recipe;
 </script>
 
-<!-- <a
-	href={`/recipes/${recipe.id}`}
-	class="block transform transition-transform hover:-translate-y-1 hover:shadow-lg"
-> -->
 <a
-	href="#"
+	href={`/recipes/${recipe.id}`}
 	class="block transform transition-transform hover:-translate-y-1 hover:shadow-lg"
 >
 	<div class="overflow-hidden rounded-lg bg-white shadow-md h-full">
