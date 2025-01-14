@@ -53,7 +53,7 @@
 			</div>
 		</div>
 
-        <div class="container mx-auto shadow-lg my-12">
+        <div class="container mx-auto shadow-lg my-12 bg-white">
             <div class="grid grid-cols-1 gap-8 p-8 md:grid-cols-2">
                 <div class="rounded-lg p-6">
                     <h2 class="mb-4 text-2xl font-semibold">Cooking Info</h2>
