@@ -82,9 +82,9 @@
     
             <div class="mt-8 rounded-lg p-8 shadow-md">
                 <h2 class="mb-6 text-3xl font-bold">Directions</h2>
-                <div class="space-y-6">
+                <div class="">
                     {#each recipe.directions as direction, index}
-                        <div class="rounded-lg bg-gray-100 p-4 shadow-sm">
+                        <div class="py-6 border-b-2">
                             <h3 class="mb-2 text-xl font-semibold">Step {index + 1}</h3>
                             <p class="">{direction}</p>
                         </div>
