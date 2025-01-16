@@ -17,26 +17,24 @@ export async function fetchRecipes(
 	totalPages: number;
 	totalElements: number;
 }> {
-	// Pass filters and pagination parameters as query parameters
 	const response = await get('/recipes/list', {
-		...filters, // Spread filters (e.g., title, maxTime)
-		page: page.toString(), // Add page number
-		size: size.toString() // Add page size
+		...filters,
+		page: page.toString(),
+		size: size.toString()
 	});
 
-	// Extract recipes and pagination metadata
 	return {
-		recipes: response.content, // Array of recipes
-		totalPages: response.totalPages, // Total number of pages
-		totalElements: response.totalElements // Total number of recipes
+		recipes: response.content,
+		totalPages: response.totalPages,
+		totalElements: response.totalElements
 	};
 }
 
 /**
  * Fetch a single recipe by ID
- * @param {number} id - The ID of the recipe
+ * @param {string} id - The ID of the recipe
  * @returns {Promise<Recipe>} - The recipe details
  */
-export async function fetchRecipeById(id: number): Promise<Recipe> {
-	return await get(`/recipes/${id}`);
+export async function fetchRecipeById(id: string): Promise<Recipe> {
+	return await get(`/recipes/get/${id}`);
 }

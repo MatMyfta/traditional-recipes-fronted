@@ -9,7 +9,6 @@
 	let recipes: Recipe[] = [];
 	let title = '';
 	let maxTime = '';
-	let total = 0;
 	let totalPages = 0;
 	let currentPage = 0;
 	const pageSize = 20;
