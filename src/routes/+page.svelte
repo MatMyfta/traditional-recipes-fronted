@@ -36,7 +36,11 @@
 
 	function onPageChange(event: CustomEvent<{ page: number }>) {
 		const { page } = event.detail;
-		fetchRecipes({ title, maxTime }, page);
+		const filters = {
+			...(title && { title }),
+			...(maxTime && maxTime !== '00:00' && { maxTime })
+		};
+		fetchRecipes(filters, page);
 	}
 
 	fetchRecipes();

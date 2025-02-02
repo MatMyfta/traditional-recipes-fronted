@@ -30,8 +30,6 @@ export async function get(endpoint: string, queryParams?: Record<string, string>
 
     const data = response.json();
 
-    console.log(url, data);
-
     return data;
   } catch (error) {
     console.error('Error during GET request:', error); // Log detailed errors

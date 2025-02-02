@@ -2,7 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 
 	export let title = '';
-	export let maxTime = ''; // Time input value (e.g., "07:00")
+	export let maxTime = '';
 
 	const dispatch = createEventDispatcher();
 
@@ -20,9 +20,9 @@
 	}
 
 	function clearFilters() {
-		title = ''; // Reset title input
-		maxTime = ''; // Reset maxTime input
-		dispatch('clear'); // Emit a clear event
+		title = '';
+		maxTime = '';
+		dispatch('clear');
 		dispatch('apply', { title, maxTime });
 	}
 </script>
