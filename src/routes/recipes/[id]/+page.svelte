@@ -2,10 +2,19 @@
 	import { page } from '$app/stores';
 	import { recipesAPI } from '$lib/api';
 	import type { Recipe } from '$lib/types/Recipe';
+	import type { Shop } from '$lib/types/Shop';
+
+	import Map from '$lib/components/shops/Map.svelte';
 
 	let recipeId: string;
 	let recipe: Recipe | null = null;
 	let errorMessage: string | null = null;
+
+	let shops: Shop[] = [
+		{ name: 'Shop A', lat: 46.4983, lng: 11.3548 },
+		{ name: 'Shop B', lat: 46.4907, lng: 11.3399 },
+		{ name: 'Shop C', lat: 46.4753, lng: 11.3187 }
+	];
 
 	// Fetch data from API
 	async function fetchRecipe(id: string) {
@@ -42,11 +51,11 @@
 						</div>
 						<div class="p-6 md:col-span-2">
 							{#if recipe?.introText}
-								<p class="mb-4 mt-2 text-lg">{recipe?.introText}</p>
+								<p class="mb-4 mt-2">{recipe?.introText}</p>
 							{/if}
 							<ul class="mb-8 flex flex-wrap gap-2">
 								{#each recipe?.tags.split(',') ?? [] as tag}
-									<li class="rounded-full bg-lime-300 text-lime-900 px-3 py-1 text-sm">{tag}</li>
+									<li class="rounded-full bg-lime-300 px-3 py-1 text-sm text-lime-900">{tag}</li>
 								{/each}
 							</ul>
 							<ul class="[&>li>strong]:text-lime-700">
@@ -61,22 +70,24 @@
 					</div>
 				</div>
 
-				<div class="mt-6 grid grid-cols-1 items-start gap-4 md:grid-cols-5">
+				<div class="mt-6 grid grid-cols-1 gap-4 rounded-md bg-white md:grid-cols-5">
 					<div class="rounded-md bg-gray-100 p-6 md:col-span-2">
 						<div class="rounded-lg">
 							<h2 class="mb-4 text-2xl font-semibold">Ingredients</h2>
-							<ul class="list ms-5 list-disc">
+							<ul class="[&>*]:py-2">
 								{@html recipe?.ingredients}
 							</ul>
 						</div>
 					</div>
-					<div class="md:col-span-3">
-						<h2 class="my-6 text-3xl font-bold">Preparation</h2>
-						<div class="[&>*]:my-1">
+					<div class="py-6 pe-4 md:col-span-3">
+						<h2 class="mb-4 text-3xl font-bold">Preparation</h2>
+						<div class="text-lg [&>*]:my-4">
 							{@html recipe?.preparation}
 						</div>
 					</div>
 				</div>
+
+				<Map location={[46.4983, 11.3548]} {shops} />
 			</div>
 		</div>
 	</div>
