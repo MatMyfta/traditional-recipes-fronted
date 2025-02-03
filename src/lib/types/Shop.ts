@@ -1,5 +1,5 @@
 export type Shop = {
-	name: string;
-	lat: number;
-	lng: number;
+	title: string;
+	tags: string;
+	coordinates: {latitude: number, longitude: number},
 }

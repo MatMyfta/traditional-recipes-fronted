@@ -2,19 +2,12 @@
 	import { page } from '$app/stores';
 	import { recipesAPI } from '$lib/api';
 	import type { Recipe } from '$lib/types/Recipe';
-	import type { Shop } from '$lib/types/Shop';
-
+	
 	import Map from '$lib/components/shops/Map.svelte';
 
 	let recipeId: string;
 	let recipe: Recipe | null = null;
 	let errorMessage: string | null = null;
-
-	let shops: Shop[] = [
-		{ name: 'Shop A', lat: 46.4983, lng: 11.3548 },
-		{ name: 'Shop B', lat: 46.4907, lng: 11.3399 },
-		{ name: 'Shop C', lat: 46.4753, lng: 11.3187 }
-	];
 
 	// Fetch data from API
 	async function fetchRecipe(id: string) {
@@ -87,7 +80,7 @@
 					</div>
 				</div>
 
-				<Map location={[46.4983, 11.3548]} {shops} />
+				<Map location={[46.4983, 11.3548]} />
 			</div>
 		</div>
 	</div>
