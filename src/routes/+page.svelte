@@ -46,8 +46,6 @@
 	fetchRecipes();
 </script>
 
-<h1 class="my-8 text-center text-3xl font-bold">Traditional Recipes</h1>
-
 <div class="container mx-auto p-4">
 	<Filter bind:title bind:maxTime on:apply={onApplyFilters} />
 	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

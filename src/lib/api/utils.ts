@@ -26,7 +26,7 @@ export async function get(endpoint: string, queryParams?: Record<string, string>
 			'Content-Type': 'application/json'
 		}
 	};
-
+	
 	try {
 		const response = await fetch(url, options);
 
