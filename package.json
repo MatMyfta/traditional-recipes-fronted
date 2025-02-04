@@ -41,5 +41,8 @@
 	"dependencies": {
 		"leaflet": "^1.9.4",
 		"traditional-recipes-frontend": "file:"
+	},
+	"engines": {
+		"node": "20.x"
 	}
 }
