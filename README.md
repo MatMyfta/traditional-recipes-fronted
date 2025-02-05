@@ -1,6 +1,6 @@
-# 🍽️ SvelteKit Recipes App
+# 🍽️ SvelteKit Traditional Recipes App
 
-This is a **SvelteKit** frontend application that displays a list of recipes and provides detailed recipe pages. Users can filter recipes, navigate paginated results, and view full recipe details.
+This is a **SvelteKit** frontend application that displays a list of recipes and provides detailed recipe pages, enriched with the local groceries in the area. Users can filter recipes, navigate paginated results, and view full recipe details.
 
 ---
 
@@ -8,6 +8,7 @@ This is a **SvelteKit** frontend application that displays a list of recipes and
 
 - ✅ **Recipe Listing**: Displays recipes in a grid layout with images and descriptions.
 - ✅ **Recipe Details Page**: Shows full recipe details including ingredients, tags, and directions.
+- ✅ **Search Local Shops**: Shows a map with all the local groceries in the area.
 - ✅ **Filtering**: Allows filtering recipes by title and maximum preparation time.
 - ✅ **Pagination**: Supports navigation between pages of recipes.
 - ✅ **Dynamic Routing**: Uses SvelteKit's dynamic routing to load individual recipe pages.
